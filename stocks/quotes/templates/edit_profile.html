@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Profile</h2>
+
+<div class="container">
+    <div class="col-6 col-md-4">
+        <!-- Dica alterar o formato do formulário: https://stackoverflow.com/questions/51787227/django-how-to-change-default-signup-fields -->
+        <form method="POST" action="{% url 'edit_profile' %}">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <p>Your form has errors</p>
+                <!-- Makes the errors appear at the top: -->
+                {% for field in form %}
+                    {% if field.errors %}
+                        {{ field.errors }}
+                    {% endif %}
+                {% endfor %}
+                </div>
+            {% endif %}
+            {{ form.as_p }}
+            <input type="submit" value="Save" class="btn btn-secondary">
+            <br/><br/>
+            <a class="btn btn-secondary" href="{% url 'change_password' %}">Click Here to Change Password</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

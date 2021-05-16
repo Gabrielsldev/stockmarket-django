@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Reference to "ticker" in line 25 in views.py  -->
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+
+<br/>
+
+{% if user.is_authenticated %}
+    <p>Name: {{user.first_name}} {{user.last_name}}</p>
+    <p>Username: {{user.username}}</p>
+    <p>Email: {{user.email}}</p>
+{% endif %}
+
+<br/>
+
+{% if api %}
+    {% if api == "Error..." %}
+        There as a problem with the API. Coundl'd complete requst.
+        Please try again.
+    {% else %}
+        <h1>{{ api.companyName }}</h1>
+        Price: ${{ api.latestPrice }}<br/>
+        Previous Close: ${{ api.previousClose }}<br/>
+        Market Cap: ${{ api.marketCap }}<br/>
+        YTD Change: {{ api.ytdChange }}<br/>
+        52 week high: ${{ api.week52High }}<br/>
+        52 week high: ${{ api.week52Low }}<br/>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
