@@ -11,5 +11,7 @@ A aplicação permite a consulta de indicadores de ações, como nome do ativo, 
 
 É possível criar um usuário e editar suas informações. Também é possível buscar por ativos e incluir ou deletar da carteira do usuário.
 
+Para consulta dos ativos, foi utilizada a API da iex Cloud.
+
 
 
