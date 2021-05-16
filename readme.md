@@ -5,7 +5,7 @@
 
 * Proposta de desenvolvimento fullstack, mas com foco no back-end.
 * Foi utilizado Django 3.2 no back-end e Bootstrap 5 no front-end.
-* Foi utilizado a base de dados SQLite, padrão do Django.
+* Foi utilizado o banco de dados SQLite, padrão do Django.
 
 A aplicação permite a consulta de indicadores de ações, como nome do ativo, preço atual, máximas e mínimas, volume, dentre outros.
 
